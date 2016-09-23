@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-21 18:42:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.julyday.hibernate.many2many.Student" table="STUDENT">
+        <id name="sid" type="int">
+            <column name="SID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>
+        <set name="teachers" table="teacher_student" inverse="true">
+        	<key column="sid"></key>
+        	<many-to-many class="com.julyday.hibernate.many2many.Teacher" column="tid"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

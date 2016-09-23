@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<!-- 数据库信息 -->
+    	<property name="connection.username">root</property>
+    	<property name="connection.password">root</property>
+    	<property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+    	<!-- 数据库驱动 -->
+    	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    	<!-- 方言 -->
+    	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+    	<!-- 显示执行的sql -->
+    	<property name="show_sql">true</property>
+    	<!-- 格式化sql -->
+    	<property name="format_sql">true</property>
+    	<!-- ddl语句生成策略 -->
+    	<property name="hbm2ddl.auto">create</property>
+    	
+    	<!--  
+    	<mapping resource="User.hbm.xml"/>
+    	<mapping resource="com/julyday/hibernate/Account.hbm.xml"></mapping>
+    	-->
+    	<!-- many2one -->
+    	<!--  
+    	<mapping resource="com/julyday/hibernate/many2one/Grade.hbm.xml"/>
+    	<mapping resource="com/julyday/hibernate/many2one/Student.hbm.xml"/>
+    	-->
+    	<!-- one2many -->
+    	<!--
+    	<mapping resource="com/julyday/hibernate/one2many/Grade.hbm.xml"/>
+    	<mapping resource="com/julyday/hibernate/one2many/Student.hbm.xml"/>
+    	-->
+    	
+    	<!-- many2many -->
+    	<!--
+    	<mapping resource="com/julyday/hibernate/many2many/Teacher.hbm.xml"/>
+    	<mapping resource="com/julyday/hibernate/many2many/Student.hbm.xml"/>
+    	-->
+    	
+    	<!-- annotation -->
+    	<!--  
+    	<mapping class="com.julyday.hibernate.annotation.Account"/>
+    	<mapping class="com.julyday.hibernate.annotation.User"/>
+    	-->
+    	<!-- one2many annotation-->
+    	<!--  
+    	<mapping class="com.julyday.hibernate.one2many.annotation.Grade"/>
+    	<mapping class="com.julyday.hibernate.one2many.annotation.Student"/>
+    	-->
+    	<!-- many2one annotation-->
+    	<!--  
+    	<mapping class="com.julyday.hibernate.many2one.annotation.Grade"/>
+    	<mapping class="com.julyday.hibernate.many2one.annotation.Student"/>
+    	-->
+    	<!-- many2many annotation-->
+    	<!--  
+    	<mapping class="com.julyday.hibernate.many2many.annotation.Teacher"/>
+    	<mapping class="com.julyday.hibernate.many2many.annotation.Student"/>
+    	-->
+    	<mapping class="com.julyday.hibernate.many2many.annotation.Teacher"/>
+    	<mapping class="com.julyday.hibernate.many2many.annotation.Student"/>
+    </session-factory>
+</hibernate-configuration>
